@@ -1,0 +1,58 @@
+1->
+#include<iostream>
+using namespace std;
+
+int fun(int n){
+   if(n == 1) return 1;
+   n +=  fun(n-1);
+   return n;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    cout<<fun(n);
+}
+
+2->
+
+#include<iostream>
+using namespace std;
+
+int fun(int n, int x) {
+    if (n == 0) return x;
+    int z = n % 10;
+    x = x * 10 + z;
+    return fun(n / 10, x);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << fun(n, 0);
+}
+
+3->
+class Solution {
+public:
+    int fun(int num, int x){
+        if(num == 0) return x;
+        if(num%2 == 0){
+            x += 1;
+            return fun(num/2,x);
+        }
+        else{
+            x += 1;
+            return fun(num-1, x);
+        }
+    }
+    int numberOfSteps(int num) {
+        int x = 0;
+        return fun(num, x);
+    }
+};
+
+4->
+
+if n = 3,  then ouput : 2
+
